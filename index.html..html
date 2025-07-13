@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Investment Report - 2258 Sapodilla Rd SW, Palm Bay, FL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #303f9f 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255,255,255,0.03) 2px,
+                rgba(255,255,255,0.03) 4px
+            );
+            animation: drift 20s linear infinite;
+        }
+        
+        @keyframes drift {
+            0% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(50px) translateY(50px); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .report-title {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .property-address {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .report-date {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        .nav-tabs {
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            border-bottom: 3px solid #1a237e;
+            overflow-x: auto;
+        }
+        
+        .nav-tab {
+            background: none;
+            border: none;
+            padding: 20px 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+        }
+        
+        .nav-tab:hover, .nav-tab.active {
+            color: #1a237e;
+            border-bottom-color: #1a237e;
+            background: rgba(26, 35, 126, 0.05);
+        }
+        
+        .content {
+            padding: 0;
+        }
+        
+        .tab-panel {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .tab-panel.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .executive-summary {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .summary-card {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .summary-label {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .summary-value {
+            font-size: 28px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .recommendation {
+            background: #ff6b35;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+        }
+        
+        .recommendation h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .detail-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .detail-card h3 {
+            color: #1a237e;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #666;
+        }
+        
+        .detail-value {
+            font-weight: 700;
+            color: #1a237e;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .market-chart {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .chart-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #1a237e;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .comparison-table th {
+            background: #1a237e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .scenario-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .scenario-card {
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scenario-card.conservative {
+            border-color: #ffc107;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+        }
+        
+        .scenario-card.target {
+            border-color: #4caf50;
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            transform: scale(1.05);
+        }
+        
+        .scenario-card.aggressive {
+            border-color: #f44336;
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+        }
+        
+        .scenario-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .scenario-price {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .scenario-roi {
+            font-size: 24px;
+            font-weight: 600;
+            color: #4caf50;
+        }
+        
+        .risk-meter {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .risk-bar {
+            flex: 1;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            margin: 0 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .risk-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50 0%, #ffc107 50%, #f44336 100%);
+            border-radius: 10px;
+            width: 22%;
+            transition: width 0.3s ease;
+        }
+        
+        .risk-label {
+            font-weight: 600;
+            color: #1a237e;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        
+        .share-btn {
+            background: #1a237e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .share-btn:hover {
+            background: #303f9f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26, 35, 126, 0.3);
+        }
+        
+        .footer {
+            background: #1a237e;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #7986cb;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .property-address {
+                font-size: 24px;
+            }
+            
+            .nav-tabs {
+                justify-content: flex-start;
+            }
+            
+            .tab-panel {
+                padding: 20px;
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .scenario-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8e6cf 0%, #dcedc1 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .metric-highlight {
+            color: #1a237e;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">CountyDeedAI</div>
+                <div class="report-title">Ultimate Property Investment Report</div>
+                <h1 class="property-address">2258 Sapodilla Rd SW, Palm Bay, FL 32908</h1>
+                <div class="report-date">Report Generated: May 04, 2025</div>
+            </div>
+        </header>
+        
+        <nav class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('executive')">Executive Summary</button>
+            <button class="nav-tab" onclick="showTab('details')">Property Details</button>
+            <button class="nav-tab" onclick="showTab('market')">Market Analysis</button>
+            <button class="nav-tab" onclick="showTab('investment')">Investment Scenarios</button>
+            <button class="nav-tab" onclick="showTab('risk')">Risk Assessment</button>
+            <button class="nav-tab" onclick="showTab('strategy')">Bidding Strategy</button>
+        </nav>
+        
+        <main class="content">
+            <div id="executive" class="tab-panel active">
+                <div class="executive-summary">
+                    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 28px; margin-bottom: 20px;">Investment Opportunity Overview</h2>
+                    <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">This vacant land parcel offers an attractive investment opportunity in Palm Bay's growing southwest corridor with strong potential for both immediate resale to builders and medium-term land banking.</p>
+                    
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <div class="summary-label">AI Valuation</div>
+                            <div class="summary-value">$24,200</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-label">Confidence Score</div>
+                            <div class="summary-value">88%</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-label">Max Bid Recommendation</div>
+                            <div class="summary-value">$20,600</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-label">Investment Rating</div>
+                            <div class="summary-value">4/5 ⭐</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-label">Lot Size</div>
+                            <div class="summary-value">0.23 Acres</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-label">Auction Date</div>
+                            <div class="summary-value">May 15, 2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recommendation">
+                    <h3>🎯 PROCEED WITH BIDDING</h3>
+                    <p>Strong investment opportunity with premium location on Sapodilla Road, good accessibility, utilities at street, and excellent potential for both development and appreciation in Palm Bay's growing southwest corridor.</p>
+                </div>
+            </div>
+            
+            <div id="details" class="tab-panel">
+                <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 30px; color: #1a237e;">Property Specifications</h2>
+                
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h3>📍 Location Details</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Address</span>
+                            <span class="detail-value">2258 Sapodilla Rd SW</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">City, State</span>
+                            <span class="detail-value">Palm Bay, FL 32908</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Property Type</span>
+                            <span class="detail-value">Vacant Residential Land</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Account Number</span>
+                            <span class="detail-value">2910726</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>📏 Physical Characteristics</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Lot Size</span>
+                            <span class="detail-value">0.23 Acres</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Dimensions</span>
+                            <span class="detail-value">75' × 133' (Est.)</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Zoning</span>
+                            <span class="detail-value">R-1 (Single Family)</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Topography</span>
+                            <span class="detail-value">Mostly flat, partially cleared</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>🔌 Utilities & Access</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Water/Sewer</span>
+                            <span class="detail-value">Available at street</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Electric</span>
+                            <span class="detail-value">Nearby</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Road Access</span>
+                            <span class="detail-value">Paved road frontage</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Flood Zone</span>
+                            <span class="detail-value">X (Minimal Risk)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>🏫 Nearby Amenities</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Shopping</span>
+                            <span class="detail-value">0.7 miles</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Elementary School</span>
+                            <span class="detail-value">1.0 miles (B+)</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Transportation</span>
+                            <span class="detail-value">2.4 miles</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Medical Facilities</span>
+                            <span class="detail-value">3.1 miles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="market" class="tab-panel">
+                <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 30px; color: #1a237e;">Market Analysis & Comparables</h2>
+                
+                <div class="market-chart">
+                    <h3 class="chart-title">🔝 Palm Bay Market Trends</h3>
+                    <div class="details-grid">
+                        <div class="detail-card">
+                            <div class="detail-row">
+                                <span class="detail-label">Vacant Land Appreciation</span>
+                                <span class="detail-value" style="color: #4caf50;">↑7.2% (1-year)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">New Construction Permits</span>
+                                <span class="detail-value" style="color: #4caf50;">↑12% (1-year)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Population Growth</span>
+                                <span class="detail-value" style="color: #4caf50;">↑2.8% (1-year)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Days on Market</span>
+                                <span class="detail-value" style="color: #4caf50;">↓15% (1-year)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="market-chart">
+                    <h3 class="chart-title">📊 Comparable Sales Analysis</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Address</th>
+                                <th>Sale Date</th>
+                                <th>Sale Price</th>
+                                <th>Lot Size</th>
+                                <th>Price/Acre</th>
+                                <th>Adjusted Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2280 Sapodilla Rd SW</td>
+                                <td>Mar 10, 2025</td>
+                                <td>$23,000</td>
+                                <td>0.23 AC</td>
+                                <td>$100,000</td>
+                                <td>$24,150</td>
+                            </tr>
+                            <tr>
+                                <td>2235 Sapodilla Rd SW</td>
+                                <td>Feb 22, 2025</td>
+                                <td>$25,500</td>
+                                <td>0.24 AC</td>
+                                <td>$106,250</td>
+                                <td>$24,990</td>
+                            </tr>
+                            <tr>
+                                <td>2218 Snapper Rd SW</td>
+                                <td>Jan 25, 2025</td>
+                                <td>$21,800</td>
+                                <td>0.23 AC</td>
+                                <td>$94,783</td>
+                                <td>$22,454</td>
+                            </tr>
+                            <tr>
+                                <td>2301 Monday Ter SW</td>
+                                <td>Apr 2, 2025</td>
+                                <td>$26,000</td>
+                                <td>0.24 AC</td>
+                                <td>$108,333</td>
+                                <td>$24,960</td>
+                            </tr>
+                            <tr>
+                                <td>2240 Snapper Rd SW</td>
+                                <td>Mar 20, 2025</td>
+                                <td>$24,800</td>
+                                <td>0.23 AC</td>
+                                <td>$107,826</td>
+                                <td>$24,800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="text-align: center; margin-top: 20px; font-weight: 600;">
+                        <span class="highlight">Adjusted Comparable Average: $24,271</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div id="investment" class="tab-panel">
+                <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 30px; color: #1a237e;">Investment Scenarios & Financial Projections</h2>
+                
+                <div class="scenario-cards">
+                    <div class="scenario-card conservative">
+                        <div class="scenario-title">Conservative</div>
+                        <div class="scenario-price">$18,100</div>
+                        <div style="margin: 15px 0;">
+                            <div>12-month hold</div>
+                            <div>Net Profit: <strong>$5,287</strong></div>
+                        </div>
+                        <div class="scenario-roi">29.2% ROI</div>
+                    </div>
+                    
+                    <div class="scenario-card target">
+                        <div class="scenario-title">Target ⭐</div>
+                        <div class="scenario-price">$20,600</div>
+                        <div style="margin: 15px 0;">
+                            <div>12-month hold</div>
+                            <div>Net Profit: <strong>$2,787</strong></div>
+                        </div>
+                        <div class="scenario-roi">13.5% ROI</div>
+                    </div>
+                    
+                    <div class="scenario-card aggressive">
+                        <div class="scenario-title">Aggressive</div>
+                        <div class="scenario-price">$24,200</div>
+                        <div style="margin: 15px 0;">
+                            <div>12-month hold</div>
+                            <div>Net Profit: <strong>($813)</strong></div>
+                        </div>
+                        <div class="scenario-roi" style="color: #f44336;">-3.4% ROI</div>
+                    </div>
+                </div>
+                
+                <div class="market-chart">
+                    <h3 class="chart-title">🏗️ Development Scenario</h3>
+                    <div class="details-grid">
+                        <div class="detail-card">
+                            <h3>Construction Financial Model</h3>
+                            <div class="detail-row">
+                                <span class="detail-label">Land Cost</span>
+                                <span class="detail-value">$20,600</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Construction Cost</span>
+                                <span class="detail-value">$300,000</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Soft Costs</span>
+                                <span class="detail-value">$36,000</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Total Project Cost</span>
+                                <span class="detail-value">$356,600</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">ARV (After Construction)</span>
+                                <span class="detail-value" style="color: #4caf50;">$415,000</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Potential Profit</span>
+                                <span class="detail-value" style="color: #4caf50;">$58,400 (16.4% ROI)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <h3>Exit Strategy Options</h3>
+                            <div class="detail-row">
+                                <span class="detail-label">Hold for Appreciation</span>
+                                <span class="detail-value">12-15% annual</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Sell to Builder</span>
+                                <span class="detail-value">15-20% ROI</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Develop (Build SFR)</span>
+                                <span class="detail-value">15-18% ROI</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Wholesale</span>
+                                <span class="detail-value">5-8% ROI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="risk" class="tab-panel">
+                <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 30px; color: #1a237e;">Risk Assessment & Analysis</h2>
+                
+                <div class="risk-meter">
+                    <span class="risk-label">Low Risk</span>
+                    <div class="risk-bar">
+                        <div class="risk-fill"></div>
+                    </div>
+                    <span class="risk-label">High Risk</span>
+                </div>
+                <p style="text-align: center; font-size: 18px; font-weight: 600; color: #4caf50; margin-bottom: 30px;">
+                    Overall Risk Profile: <span class="highlight">Low (2.2/10)</span>
+                </p>
+                
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h3>🎯 Market Risk</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Risk Level</span>
+                            <span class="detail-value" style="color: #4caf50;">Low (2/10)</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;">✅ Strong local market with consistent growth</li>
+                                <li style="margin-bottom: 8px;">✅ High demand for buildable lots</li>
+                                <li style="margin-bottom: 8px;">✅ Limited inventory in this price range</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>🏗️ Property Risk</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Risk Level</span>
+                            <span class="detail-value" style="color: #4caf50;">Low (2/10)</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;">✅ No significant site challenges identified</li>
+                                <li style="margin-bottom: 8px;">✅ Suitable topography for development</li>
+                                <li style="margin-bottom: 8px;">✅ No evidence of environmental concerns</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>📋 Regulatory Risk</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Risk Level</span>
+                            <span class="detail-value" style="color: #4caf50;">Low (1/10)</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;">✅ Clear zoning designation (R-1)</li>
+                                <li style="margin-bottom: 8px;">✅ No pending regulatory changes</li>
+                                <li style="margin-bottom: 8px;">✅ Standard building permit process</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>💰 Financial Risk</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Risk Level</span>
+                            <span class="detail-value" style="color: #4caf50;">Low (2/10)</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;">✅ Conservative valuation approach</li>
+                                <li style="margin-bottom: 8px;">✅ Multiple viable exit strategies</li>
+                                <li style="margin-bottom: 8px;">✅ Limited holding costs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="strategy" class="tab-panel">
+                <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 30px; color: #1a237e;">AI-Powered Bidding Strategy</h2>
+                
+                <div class="recommendation">
+                    <h3>🎯 RECOMMENDED BIDDING APPROACH</h3>
+                    <p><strong>Maximum Bid: $20,600</strong> (85.1% of estimated market value)</p>
+                    <p>Provides potential equity of $3,600 (14.9%) while maintaining ROI threshold</p>
+                </div>
+                
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h3>📊 Pre-Auction Intelligence</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Opening Bid</span>
+                            <span class="detail-value">$9,000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Estimated Bidders</span>
+                            <span class="detail-value">5-7</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Bidding Intensity</span>
+                            <span class="detail-value">Moderate to High</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Expected Range</span>
+                            <span class="detail-value">$18,000 - $24,500</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Auction Platform</span>
+                            <span class="detail-value">Realauction.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>⚡ Bidding Timeline Strategy</h3>
+                        <div style="margin-bottom: 15px;">
+                            <strong>1. Initial Phase</strong><br>
+                            Enter at $11,500 to establish presence
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <strong>2. Mid-Auction</strong><br>
+                            Incremental bids of $500-1,000
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <strong>3. End-Game</strong><br>
+                            Rapid response within 8 seconds, max $20,600
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <strong>4. Timing</strong><br>
+                            Most activity in first and last 3 minutes
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>📈 Historical Patterns</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Average Bidders</span>
+                            <span class="detail-value">5.5</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Bid Frequency</span>
+                            <span class="detail-value">2.1 bids/minute</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Final Price Ratio</span>
+                            <span class="detail-value">65-80% of market value</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>✅ Due Diligence Checklist</h3>
+                        <div style="margin-top: 15px;">
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;">📋 Property Survey (Recommended)</li>
+                                <li style="margin-bottom: 8px;">🌱 Environmental Assessment (Level I)</li>
+                                <li style="margin-bottom: 8px;">⚡ Utilities Confirmation (Completed)</li>
+                                <li style="margin-bottom: 8px;">📄 Title Search (Required)</li>
+                                <li style="margin-bottom: 8px;">🏠 Flood Certification (Completed - Zone X)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="share-buttons">
+            <button class="share-btn" onclick="printReport()">🖨️ Print Report</button>
+            <button class="share-btn" onclick="shareReport()">📤 Share Report</button>
+            <button class="share-btn" onclick="downloadPDF()">📄 Download PDF</button>
+            <a href="mailto:?subject=Property Investment Opportunity - 2258 Sapodilla Rd SW&body=Check out this amazing property investment opportunity in Palm Bay, FL!" class="share-btn">📧 Email Report</a>
+        </div>
+        
+        <footer class="footer">
+            <p>&copy; 2025 CountyDeedAI - Making County Auctions Accessible for Everyone Everywhere</p>
+            <p><a href="https://www.countydeedai.com">www.countydeedai.com</a></p>
+            <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
+                This report was generated using proprietary AI analysis. All investment decisions should be validated with independent due diligence. This report does not constitute legal or financial advice.
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            // Hide all tab panels
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected panel and activate tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+        
+        function printReport() {
+            window.print();
+        }
+        
+        function shareReport() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Property Investment Report - 2258 Sapodilla Rd SW',
+                    text: 'Check out this amazing property investment opportunity in Palm Bay, FL!',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const url = window.location.href;
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Report URL copied to clipboard!');
+                });
+            }
+        }
+        
+        function downloadPDF() {
+            // This would typically integrate with a PDF generation service
+            alert('PDF download feature would be implemented with a backend service. For now, you can use the Print function and save as PDF.');
+        }
+        
+        // Smooth scrolling for better UX
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            });
+        });
+        
+        // Add some interactive hover effects
+        document.querySelectorAll('.detail-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(-5px)';
+            });
+        });
+    </script>
+</body>
+</html>
